@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
+
 class App extends Component {
   componentDidMount() {
     const request = new XMLHttpRequest();
@@ -20,8 +22,11 @@ else
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Игорь!!</h1>
+          <h1 className="App-title">Выдача опреденленного послания:</h1>
         </header>
+        <div className="Window_inf">
+        
+        </div>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>

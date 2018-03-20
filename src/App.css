@@ -26,3 +26,11 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.Window_inf
+{
+  width:100%;
+  height:50vh;
+  background: #222;
+  margin-top: 1%;
+}
