@@ -4,7 +4,7 @@ import './App.css';
 
 class App extends Component {
  
-  getQuery = (url, requestBody) => {
+  getQuery = (url) => {
     return new Promise((succeed, fail)=>{
       const request = new XMLHttpRequest();
       request.open('GET', url);
@@ -14,10 +14,22 @@ class App extends Component {
       request.addEventListener('error', ()=>{
         fail(new Error('Error'));
       });
-      request.send(requestBody);
+
+      request.send();
     });
   };
+  
+  
   componentDidMount() {
+    this.getQuery("https://api.hh.ru/vacancies").then(
+      function(response){
+        const obj = JSON.parse(response);
+        console.log(obj.items);
+ 
+      }
+      
+    )
+
     const request = new XMLHttpRequest();
 request.open("GET", "https://api.hh.ru/vacancies", false);
 request.send();
@@ -28,6 +40,7 @@ else if(status==404)
 document.write("Ресурс не найден")
 else
 document.write(request.statusText)
+
   }
 
   
@@ -39,7 +52,6 @@ document.write(request.statusText)
           <h1 className="App-title">Игорь!!</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
         </p>
       </div>
     );
