@@ -2,9 +2,15 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
 class App extends Component {
  
-  getQuery = (url) => {
+constructor(props){
+  super(props);
+  this.state={date: []};
+}
+
+  getQuery = url => {
     return new Promise((succeed, fail)=>{
       const request = new XMLHttpRequest();
       request.open('GET', url);
@@ -21,17 +27,27 @@ class App extends Component {
   
   
   componentDidMount() {
-    this.getQuery("https://api.hh.ru/vacancies").then(
-      function(response){
-        const obj = JSON.parse(response);
-        console.log(obj.items);
- 
+    let name = "Front-end"
+    this.getQuery(`https://api.hh.ru/vacancies?text=${name}`)
+    .then(
+      response => {
+          return JSON.parse(response);
       }
-      
-    )
+      )
+        .then(
+         obj => {
+            return obj.items;
+          })
+          .then(
+            items => {
+             this.setState({data: items});
+            })
 
-    const request = new XMLHttpRequest();
-request.open("GET", "https://api.hh.ru/vacancies", false);
+
+
+
+    /*const request = new XMLHttpRequest();
+request.open("GET", "https://api.hh.ru/vacancies, false);
 request.send();
 const status = request.status;
 if(status==200)
@@ -40,19 +56,23 @@ else if(status==404)
 document.write("Ресурс не найден")
 else
 document.write(request.statusText)
-
+*/
   }
 
   
   render() {
+    const {data} = this.state;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Игорь!!</h1>
-        </header>
-        <p className="App-intro">
-        </p>
+      <div>
+        {console.log(data)}
+        {data && data.map((data,index) => {
+          return (
+          <div key={index} style={{margin: '1rem', border: '1px solid black', background:"#222", color:"white"}}>
+            <div><h3>{data.name}</h3></div>
+            <div>{data.snippet.requirement}</div>
+            </div>)
+        })}
+         
       </div>
     );
   }
