@@ -8,7 +8,7 @@ class App extends Component {
 constructor(props){
   super(props);
   this.state={
-    date: []
+    data: [],
     nameVac: ''};
 }
 
@@ -64,9 +64,9 @@ document.write(request.statusText)
   
   render() {
     const {data} = this.state;
+    console.log(data)
     return (
       <div>
-        {console.log(data)}
         {data && data.map((data,index) => {
           return (
           <div key={index} style={{margin: '1rem', border: '1px solid black', background:"#222", color:"white"}}>
