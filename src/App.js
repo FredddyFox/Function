@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import TextField from 'material-ui/TextField';
+import Button from 'material-ui/Button';
 
 class App extends Component {
  
 constructor(props){
   super(props);
-  this.state={
-    data: [],
-    nameVac: ''};
+  this.state={date: [], name: ''};
 }
 
   getQuery = url => {
@@ -29,8 +28,7 @@ constructor(props){
   
   
   componentDidMount() {
-    let name = "Front-end"
-    this.getQuery(`https://api.hh.ru/vacancies?text=${name}`)
+    this.getQuery(`https://api.hh.ru/vacancies`)
     .then(
       response => {
           return JSON.parse(response);
@@ -60,25 +58,67 @@ else
 document.write(request.statusText)
 */
   }
-
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value,
+    });
+  };
+  handleClickSearch = () => {
+    this.getQuery(`https://api.hh.ru/vacancies?text=${this.state.name}`)
+    .then(
+      response => {
+          return JSON.parse(response);
+      }
+      )
+        .then(
+         obj => {
+            return obj.items;
+          })
+          .then(
+            items => {
+             this.setState({data: items});
+            })
+  };
+  
+ 
+      
   
   render() {
     const {data} = this.state;
-    console.log(data)
     return (
+      
       <div>
+        <div className="menu"><TextField
+          id="name"
+          label="Name"
+          value={this.state.name}
+          onChange={this.handleChange('name')}
+          margin="normal"
+        />
+        <Button variant="raised" color="primary" onClick={this.handleClickSearch}>
+      Поиск
+    </Button>
+    </div>
+        {console.log(data)}
         {data && data.map((data,index) => {
-          return (
-          <div key={index} style={{margin: '1rem', border: '1px solid black', background:"#222", color:"white"}}>
+          return (  
+          <div key={index}>
+          <div className="vivod">
             <div><h3>{data.name}</h3></div>
             <div>{data.snippet.requirement}</div>
+            <div >{data.area.name}</div>
+            <div>{data.type.name}</div>
+            </div>
+            </div>
             
-            </div>)
+            
+          )
         })}
          
       </div>
     );
   }
 }
+
 
 export default App;
