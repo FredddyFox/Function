@@ -99,18 +99,21 @@ document.write(request.statusText)
 <hr></hr>
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/GNOME_Web_logo.png" className="img_" alt="Логотип сайта"/></center> 
 </div>
+
         <div className="menu">
-        <form>
-         <input placeholder="Name" class="pole" type="search" value={this.state.name} onChange={this.handleChange}  />
+        <form className="form_">
+         <input placeholder="Ввод информации:" class="pole" type="search" value={this.state.name} onChange={this.handleChange}  />
         <button class="knopka" onClick={this.handleClickSearch}>
         Поиск
     </button>
     </form>
     </div>
+    <div className="viravnivanie"></div>
         {console.log(data)}
         {data && data.map((data,index) => {
           return (  
           <div key={index}>
+          
           <div className="vivod">
             <div><h2><a href={data.alternate_url}>{data.name}</a></h2></div>
             
@@ -119,10 +122,11 @@ document.write(request.statusText)
             <div><p>Статус:{data.type.name}</p></div>
                 </div>
             </div>
+            
   
           )
         })}
-         
+         <div className="bottom"><center><p>Благодарим за посищение сайта(С)</p></center></div>
       </div>
     );
   }
