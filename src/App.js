@@ -8,7 +8,7 @@ class App extends Component {
  
 constructor(props){
   super(props);
-  this.state={date: [], name: ''};
+  this.state={date: [], name: '', loading: true};
 }
 
   getQuery = url => {
@@ -76,7 +76,7 @@ document.write(request.statusText)
           })
           .then(
             items => {
-             this.setState({data: items});
+             this.setState({data: items, loading: false});
             })
   };
   
@@ -86,9 +86,11 @@ document.write(request.statusText)
   render() {
     const {data} = this.state;
     return (
+      /*loading ? <div>Загрузка</div> :*/
       
       <div>
-        <div className="menu"><TextField
+        <div className="menu">
+        <TextField
           id="name"
           label="Name"
           value={this.state.name}
@@ -105,11 +107,15 @@ document.write(request.statusText)
           <div key={index}>
           <div className="vivod">
             <div><h3>{data.name}</h3></div>
-            <div>{data.snippet.requirement}</div>
-            <div >{data.area.name}</div>
-            <div>{data.type.name}</div>
+            <div><p>Требования:{data.snippet.requirement}</p></div>
+            <div ><p>Город:{data.area.name}</p></div>
+            <div><p>Ссылка:</p><a href="">{data.alternate_url}</a></div>
+            <div><p>Статус:{data.type.name}</p></div>
+            
+
             </div>
             </div>
+            
             
             
           )
