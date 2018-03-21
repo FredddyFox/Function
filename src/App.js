@@ -81,14 +81,17 @@ document.write(request.statusText)
   };
   
  
-      
-  
+
   render() {
     const {data} = this.state;
     return (
-      /*loading ? <div>Загрузка</div> :*/
-      
+      /*loading ? <div>Загрузка</div> :*/ 
       <div>
+<div className="rightMenu">
+<center><h1>Приветствуем вас на сайте<br></br> вакансий</h1></center>
+<hr></hr>
+<center><img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/GNOME_Web_logo.png" className="img_" alt="Логотип сайта"/></center> 
+</div>
         <div className="menu">
         <TextField
           id="name"
@@ -106,18 +109,14 @@ document.write(request.statusText)
           return (  
           <div key={index}>
           <div className="vivod">
-            <div><h3>{data.name}</h3></div>
-            <div><p>Требования:{data.snippet.requirement}</p></div>
+            <div><h2><a href={data.alternate_url}>{data.name}</a></h2></div>
+            
+            <div><hr></hr><p>Требования:{data.snippet.requirement}</p></div>
             <div ><p>Город:{data.area.name}</p></div>
-            <div><p>Ссылка:</p><a href="">{data.alternate_url}</a></div>
             <div><p>Статус:{data.type.name}</p></div>
-            
-
+                </div>
             </div>
-            </div>
-            
-            
-            
+  
           )
         })}
          
