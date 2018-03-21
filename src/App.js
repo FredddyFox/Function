@@ -7,7 +7,9 @@ class App extends Component {
  
 constructor(props){
   super(props);
-  this.state={date: []};
+  this.state={
+    date: []
+    nameVac: ''};
 }
 
   getQuery = url => {
@@ -70,6 +72,7 @@ document.write(request.statusText)
           <div key={index} style={{margin: '1rem', border: '1px solid black', background:"#222", color:"white"}}>
             <div><h3>{data.name}</h3></div>
             <div>{data.snippet.requirement}</div>
+            
             </div>)
         })}
          
