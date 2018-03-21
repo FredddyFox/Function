@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import TextField from 'material-ui/TextField';
-import Button from 'material-ui/Button';
+
 
 class App extends Component {
  
 constructor(props){
   super(props);
-  this.state={date: [], name: '', loading: true};
+  this.state={
+    date: [], 
+    name: '', 
+    loading: true
+  };
 }
 
   getQuery = url => {
@@ -58,12 +61,13 @@ else
 document.write(request.statusText)
 */
   }
-  handleChange = name => event => {
+  handleChange = event => {
     this.setState({
-      [name]: event.target.value,
+      name: event.target.value,
     });
   };
-  handleClickSearch = () => {
+  handleClickSearch = event => {
+    event.preventDefault(); 
     this.getQuery(`https://api.hh.ru/vacancies?text=${this.state.name}`)
     .then(
       response => {
@@ -76,7 +80,10 @@ document.write(request.statusText)
           })
           .then(
             items => {
-             this.setState({data: items, loading: false});
+             this.setState({
+              data: items, 
+              loading: false
+            });
             })
   };
   
@@ -90,16 +97,12 @@ document.write(request.statusText)
       
       <div>
         <div className="menu">
-        <TextField
-          id="name"
-          label="Name"
-          value={this.state.name}
-          onChange={this.handleChange('name')}
-          margin="normal"
-        />
-        <Button variant="raised" color="primary" onClick={this.handleClickSearch}>
-      Поиск
-    </Button>
+        <form>
+         <input placeholder="Name" class="pole" type="search" value={this.state.name} onChange={this.handleChange}  />
+        <button class="knopka" onClick={this.handleClickSearch}>
+        Поиск
+    </button>
+    </form>
     </div>
         {console.log(data)}
         {data && data.map((data,index) => {

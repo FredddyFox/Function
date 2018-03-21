@@ -62,5 +62,32 @@
 
 }
 
+button.knopka {
+	color: #fff; 
+	background: #FFA500; 
+	padding: 4px; 
+	border-radius: 5px;
+  border: 2px solid #FF8247;
+  width: 3%;
+  height: 10%;
+  margin: 2%;
+  margin-left: 0%;  
+	} 
+	button.knopka:hover { 
+  background: rgb(253, 135, 114); 
+  }
+  button.knopka:active{
+  background: rgb(255, 92, 92);
+  }
+  
+  .pole{
+    background-color:white;
+    padding: 4px; 
+    height: 10%;
+    width: 7%;
+    margin-top: 2%;
+    margin-left: 2%;
+  }
+
 
 
