@@ -88,7 +88,8 @@ document.write(request.statusText)
     return (
       
       <div>
-        <div className="menu"><TextField
+        <div className="menu">
+        <TextField
           id="name"
           label="Name"
           value={this.state.name}
