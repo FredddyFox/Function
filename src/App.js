@@ -98,10 +98,22 @@ document.write(request.statusText)
 <center><h1>Приветствуем вас на сайте<br></br> вакансий</h1></center>
 <hr></hr>
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/GNOME_Web_logo.png" className="img_" alt="Логотип сайта"/></center> 
+<button class="knopka1">
+        Поиск </button>
+    <button class="knopka1">
+        Поиск </button>
+    <button class="knopka1">
+        Поиск </button>
+    <button class="knopka1">
+        Поиск </button>
+    <button class="knopka1">
+        Поиск </button>
+    <hr></hr>
 </div>
         <div className="menu">
         <form>
-         <input placeholder="Name" class="pole" type="search" value={this.state.name} onChange={this.handleChange}  />
+         <input placeholder="Name" class="pole" type="search" 
+         value={this.state.name} onChange={this.handleChange} />
         <button class="knopka" onClick={this.handleClickSearch}>
         Поиск
     </button>
