@@ -111,7 +111,8 @@ button.knopka1:active
   margin-top: 2%;
   margin-left: 2%;
 }
-button.knopka {
+button.knopka
+{
 	color: #fff; 
 	background: #FFA500; 
 	padding: 0.4vh; 
@@ -121,13 +122,16 @@ button.knopka {
   height: 15%;
   margin-left: 0%; 
   font-size:1.5vh; 
-	} 
-	button.knopka:hover { 
+} 
+  button.knopka:hover
+{ 
   background: #FF8247; 
-  }
-  button.knopka:active{
+}
+  button.knopka:active
+{
   background: #FF8247;
-  }
+}
+
   .viravnivanie
   {
     width:100%;
@@ -155,7 +159,6 @@ padding-top:2.5%;
 position:absolute;
 right:0%;
 font-size:2vh; 
-
 }
 
 .img_
@@ -176,11 +179,26 @@ font-size:2vh;
   height:3.5vh;
 }
 
-.img_wirawn
+.reg
 {
-
+  color: #fff; 
+	background: #FFA500; 
+	padding: 0.4vh; 
+	border-radius: 0.6vh;
+  border: 0.5vh solid #FF8247;
+  width: 4%;
+  height: 15%;
+  margin-left: 77%; 
+  font-size:1.5vh; 
+} 
+  button.reg:hover 
+{ 
+  background: #FF8247; 
 }
-
+  button.reg:active
+{
+  background: #FF8247;
+}
 
 .img_soc
 {
@@ -188,18 +206,21 @@ font-size:2vh;
   position:absolute;
   right:0%;
 }
+
 .img_soc_2
 {
   width:4.5vh;
   position:absolute;
   right:5vh;
 }
+
 .img_soc_3
 {
   width:4.5vh;
   position:absolute;
   right:10vh;
 }
+
 .img_soc_4
 {
   width:4.5vh;
