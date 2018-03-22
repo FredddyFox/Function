@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import Instagram from './img/instagram.svg';
+import Youtube from './img/youtube.svg';
+import Twitter from './img/twitter.svg';
+import Google from './img/google-plus.svg';
 
 class App extends Component {
  
@@ -126,18 +129,17 @@ document.write(request.statusText)
           <div key={index}>
           
           <div className="vivod">
-            <div><h2><a href={data.alternate_url}>{data.name}</a></h2></div>
-            
-            <div><hr></hr><p>Требования:{data.snippet.requirement}</p></div>
-            <div ><p>Город:{data.area.name}</p></div>
-            <div><p>Статус:{data.type.name}</p></div>
+            <div><tr><th><h2><a href={data.alternate_url}>{data.name}</a></h2></th></tr></div>
+            <div><hr></hr><tr><td><p>Требования:{data.snippet.requirement}</p></td></tr></div>
+            <div><tr><td><p>Город:{data.area.name}</p></td></tr></div>
+            <div><tr><td><p>Статус:{data.type.name}</p></td></tr></div>
                 </div>
             </div>
             
   
           )
         })}
-         <div className="bottom"><center><p>Благодарим за посищение сайта(С)</p></center></div>
+         <div className="bottom"><div className="img_wirawn"><img src={Instagram} className="img_soc"/><img src={Youtube} className="img_soc_2"/><img src={Twitter} className="img_soc_4"/><img src={Google} className="img_soc_3"/><p>Благодарим за посищение сайта(С)</p></div></div>
       </div>
     );
   }
