@@ -7,7 +7,9 @@ render() {
 const {data} = this.props;
 return (
     <div>
+        {console.log(data)}
     {data && data.map((data,index) => {
+        return (
       <div key={index}>
       <div className="vivod">
         <div><tr><th><h2><a href={data.alternate_url}>{data.name}</a></h2></th></tr></div>
@@ -16,6 +18,7 @@ return (
         <div><tr><td><p>Статус:{data.type.name}</p></td></tr></div>
             </div>
         </div>
+        )
     })}
     </div>
 )}};

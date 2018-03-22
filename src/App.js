@@ -94,19 +94,9 @@ document.write(request.statusText)
     return (
       /*loading ? <div>Загрузка</div> :*/ 
       <div>
-<RightMenu/>
-        <div className="menu">
-        <form className="form_">
-         <input placeholder="Ввод информации:" class="pole" type="search" value={this.state.name} onChange={this.handleChange}  />
-        <button class="knopka" onClick={this.handleClickSearch}>
-        Поиск
-    </button>
-    </form>
-    </div>
-         <RightMenu />
-         <Header />
+        <RightMenu/>
         <Header handleClickSearch={this.handleClickSearch}/>
-    <div className="viravnivanie"></div>
+        <div className="viravnivanie"></div>
         <Vivod data={data}/>
         <Bottom/>
       </div>
