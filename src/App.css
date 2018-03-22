@@ -10,8 +10,13 @@ a {
 
  hr{
       background:#514f46;
-      width:80%;
+      width:95%;
    }
+   table {padding-left:5vh;} 
+
+th {padding-left:5vh;}
+
+td {padding-left:5vh;} 
 
 .App {
   text-align: center;
@@ -57,7 +62,7 @@ a {
   width:70%;
   height:2vh;
   margin-top:0.5%;
-  padding-bottom:10%;
+  padding-bottom:12%;
   border: 1px solid black;
   background:#222;
   color:white;
@@ -146,7 +151,7 @@ button.knopka
 .rightMenu
 {
 width:29%;
-height:455.3%;
+height:559.5%;
 border: 1px solid black;
 background:#222;
 color:white;
@@ -154,7 +159,6 @@ padding-top:2.5%;
 position:absolute;
 right:0%;
 font-size:2vh; 
-
 }
 
 .img_
@@ -196,5 +200,32 @@ font-size:2vh;
   background: #FF8247;
 }
 
+.img_soc
+{
+  width:4.5vh;
+  position:absolute;
+  right:0%;
+}
+
+.img_soc_2
+{
+  width:4.5vh;
+  position:absolute;
+  right:5vh;
+}
+
+.img_soc_3
+{
+  width:4.5vh;
+  position:absolute;
+  right:10vh;
+}
+
+.img_soc_4
+{
+  width:4.5vh;
+  position:absolute;
+  right:15vh;
+}
 
 
