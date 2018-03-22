@@ -6,8 +6,12 @@ import Youtube from './img/youtube.svg';
 import Twitter from './img/twitter.svg';
 import Google from './img/google-plus.svg';
 import RightMenu from './RightMenu';
+<<<<<<< HEAD
 import Bottom from './Bottom';
 import Vivod from './Vivod';
+=======
+import Header from './Header';
+>>>>>>> 753b4487cc7998b3027a968899ff4b2e058c6fc6
 
 class App extends Component {
  
@@ -67,6 +71,7 @@ document.write(request.statusText)
       name: event.target.value,
     });
   };
+
   handleClickSearch = event => {
     event.preventDefault(); 
     this.getQuery(`https://api.hh.ru/vacancies?text=${this.state.name}`)
@@ -93,6 +98,7 @@ document.write(request.statusText)
     return (
       /*loading ? <div>Загрузка</div> :*/ 
       <div>
+<<<<<<< HEAD
 <RightMenu/>
         <div className="menu">
         <form className="form_">
@@ -102,6 +108,10 @@ document.write(request.statusText)
     </button>
     </form>
     </div>
+=======
+         <RightMenu />
+         <Header />
+>>>>>>> 753b4487cc7998b3027a968899ff4b2e058c6fc6
     <div className="viravnivanie"></div>
         <Vivod data={data}/>
         <Bottom/>
