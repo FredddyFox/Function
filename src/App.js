@@ -58,9 +58,9 @@ constructor(props){
     });
   };
 
-  handleClickSearch = event => {
+  handleClickSearch = name => event => {
     event.preventDefault(); 
-    this.getQuery(`https://api.hh.ru/vacancies?text=${this.state.name}`)
+    this.getQuery(`https://api.hh.ru/vacancies?text=${name}`)
     .then(
       response => {
           return JSON.parse(response);
@@ -79,14 +79,13 @@ constructor(props){
             })
   };
   
- 
 
   render(){
     const {data} = this.state;
     return (
       <div>
          <RightMenu />
-         <Header />
+        <Header handleClickSearch={this.handleClickSearch}/>
     <div className="viravnivanie"></div>
         {console.log(data)}
         {data && data.map((data,index) => {
