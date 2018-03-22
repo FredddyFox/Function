@@ -7,7 +7,7 @@ import Twitter from './img/twitter.svg';
 import Google from './img/google-plus.svg';
 import RightMenu from './RightMenu';
 import Bottom from './Bottom';
-import Header from './Vivod';
+import Vivod from './Vivod';
 
 class App extends Component {
  
@@ -88,18 +88,12 @@ document.write(request.statusText)
             })
   };
   
- 
-
   render() {
-    const {data} = this.props.data;
+    const {data} = this.state;
     return (
       /*loading ? <div>Загрузка</div> :*/ 
-
-      
       <div>
 <RightMenu/>
-
-
         <div className="menu">
         <form className="form_">
          <input placeholder="Ввод информации:" class="pole" type="search" value={this.state.name} onChange={this.handleChange}  />
@@ -109,7 +103,7 @@ document.write(request.statusText)
     </form>
     </div>
     <div className="viravnivanie"></div>
-
+        <Vivod data={data}/>
         <Bottom/>
       </div>
     );
