@@ -129,7 +129,7 @@ button.knopka
 }
   button.knopka:active
 {
-  background: #FF8247;
+  background: rgb(233, 102, 41);
 }
 
   .viravnivanie

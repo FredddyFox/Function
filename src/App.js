@@ -6,12 +6,9 @@ import Youtube from './img/youtube.svg';
 import Twitter from './img/twitter.svg';
 import Google from './img/google-plus.svg';
 import RightMenu from './RightMenu';
-<<<<<<< HEAD
 import Bottom from './Bottom';
 import Vivod from './Vivod';
-=======
 import Header from './Header';
->>>>>>> 753b4487cc7998b3027a968899ff4b2e058c6fc6
 
 class App extends Component {
  
@@ -72,9 +69,9 @@ document.write(request.statusText)
     });
   };
 
-  handleClickSearch = event => {
+  handleClickSearch = name => event => {
     event.preventDefault(); 
-    this.getQuery(`https://api.hh.ru/vacancies?text=${this.state.name}`)
+    this.getQuery(`https://api.hh.ru/vacancies?text=${name}`)
     .then(
       response => {
           return JSON.parse(response);
@@ -92,13 +89,11 @@ document.write(request.statusText)
             });
             })
   };
-  
-  render() {
+  render(){
     const {data} = this.state;
     return (
       /*loading ? <div>Загрузка</div> :*/ 
       <div>
-<<<<<<< HEAD
 <RightMenu/>
         <div className="menu">
         <form className="form_">
@@ -108,10 +103,9 @@ document.write(request.statusText)
     </button>
     </form>
     </div>
-=======
          <RightMenu />
          <Header />
->>>>>>> 753b4487cc7998b3027a968899ff4b2e058c6fc6
+        <Header handleClickSearch={this.handleClickSearch}/>
     <div className="viravnivanie"></div>
         <Vivod data={data}/>
         <Bottom/>
