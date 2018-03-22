@@ -6,6 +6,7 @@ import Youtube from './img/youtube.svg';
 import Twitter from './img/twitter.svg';
 import Google from './img/google-plus.svg';
 import RightMenu from './RightMenu';
+import Header from './Header';
 
 class App extends Component {
  
@@ -56,6 +57,7 @@ constructor(props){
       name: event.target.value,
     });
   };
+
   handleClickSearch = event => {
     event.preventDefault(); 
     this.getQuery(`https://api.hh.ru/vacancies?text=${this.state.name}`)
@@ -84,19 +86,7 @@ constructor(props){
     return (
       <div>
          <RightMenu />
-
-        <div className="menu">
-        <form className="form_">
-         <input placeholder="Ввод информации:" className="pole" type="search" value={this.state.name}
-          onChange={this.handleChange} />
-        <button className="knopka" onClick={this.handleClickSearch}>
-        Поиск
-    </button>
-        <button className="reg">
-        Поиск
-    </button>
-    </form>
-    </div>
+         <Header />
     <div className="viravnivanie"></div>
         {console.log(data)}
         {data && data.map((data,index) => {
