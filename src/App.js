@@ -117,6 +117,9 @@ document.write(request.statusText)
         <button class="knopka" onClick={this.handleClickSearch}>
         Поиск
     </button>
+        <button class="reg">
+        Поиск
+    </button>
     </form>
     </div>
     <div className="viravnivanie"></div>
