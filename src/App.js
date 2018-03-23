@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import './index.js';
 import RightMenu from './RightMenu';
 import Bottom from './Bottom';
 import Vivod from './Vivod';
@@ -12,7 +11,7 @@ class App extends Component {
   state={
     date: [], 
     loading: true
-  }
+  };
   getQuery = url => {
     return new Promise((succeed, fail)=>{
       const request = new XMLHttpRequest();
