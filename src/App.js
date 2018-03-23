@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Instagram from './img/instagram.svg';
-import Youtube from './img/youtube.svg';
-import Twitter from './img/twitter.svg';
-import Google from './img/google-plus.svg';
 import RightMenu from './RightMenu';
 import Bottom from './Bottom';
 import Vivod from './Vivod';
@@ -15,7 +10,7 @@ class App extends Component {
   state={
     date: [], 
     loading: true
-  }
+  };
   getQuery = url => {
     return new Promise((succeed, fail)=>{
       const request = new XMLHttpRequest();
