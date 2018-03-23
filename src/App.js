@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import './App.css';
 import RightMenu from './RightMenu';
 import Bottom from './Bottom';
 import Vivod from './Vivod';
 import Header from './Header';
+import Hi from './Hi';
+
+const Container = styled.div`
+    width:100%;
+    height:6vh;
+    background: black;
+`;
+
 
 class App extends Component {
  
@@ -85,15 +94,19 @@ document.write(request.statusText)
             })
   };
   render(){
+
     const {data} = this.state;
     return (
-      /*loading ? <div>Загрузка</div> :*/ 
+
+      /*loading ? <div>Загрузка</div> :*/
       <div>
         <RightMenu/>
         <Header handleClickSearch={this.handleClickSearch}/>
-        <div className="viravnivanie"></div>
+          <Container />
         <Vivod data={data}/>
+
         <Bottom/>
+          <div><Hi/></div>
       </div>
     );
   }
