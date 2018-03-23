@@ -93,9 +93,9 @@ handleClickSearch = name => event => {
     return (
       /*loading ? <div>Загрузка</div> :*/ 
       <div>
-         <RightMenu />
+        <RightMenu/>
         <Header handleClickSearch={this.handleClickSearch}/>
-    <div className="viravnivanie"></div>
+        <div className="viravnivanie"></div>
         <Vivod data={data}/>
         <Bottom/>
       </div>
