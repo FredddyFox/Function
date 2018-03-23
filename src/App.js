@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import './index.js';
 import RightMenu from './RightMenu';
 import Bottom from './Bottom';
 import Vivod from './Vivod';
 import Header from './Header';
-import Bottom from './Bottom';
-import Info from './Info';
+import About from "./About";
 
 class App extends Component {
  
@@ -46,20 +45,6 @@ class App extends Component {
              this.setState({data: items});
             })
 
-
-
-
-    /*const request = new XMLHttpRequest();
-request.open("GET", "https://api.hh.ru/vacancies, false);
-request.send();
-const status = request.status;
-if(status==200)
-document.write("Текст ответа: " + request.responseText)
-else if(status==404)
-document.write("Ресурс не найден")
-else
-document.write(request.statusText)
-*/
   }
   handleChange = event => {
     this.setState({
@@ -86,8 +71,8 @@ handleClickSearch = name => event => {
             loading: false
           });
           })
-
   };
+
   render(){
     const {data} = this.state;
     return (
@@ -98,6 +83,9 @@ handleClickSearch = name => event => {
         <div className="viravnivanie"></div>
         <Vivod data={data}/>
         <Bottom/>
+        <div>
+          <About />
+        </div>
       </div>
     );
   }

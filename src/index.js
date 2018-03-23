@@ -1,8 +1,45 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import { Provide } from 'react-redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { Router, Route, hashHistory} from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+import About from "./About";
+import App from "./App";
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const Appl = () => (
+    <div>
+        <Header />
+        <Main />
+    </div>
+)
+
+const Main = () => (
+    <main>
+        <Switch>
+            <Route exact path='/' component={App}/>
+            <Route path='/roster' component={About}/>
+        </Switch>
+    </main>
+)
+
+const Header = () => (
+    <header>
+        <nav>
+            <ul>
+                <li><Link to='/'>App</Link></li>
+                <li><Link to='/roster'>About</Link></li>
+            </ul>
+        </nav>
+    </header>
+)
+
+
+ReactDOM.render((
+    <BrowserRouter>
+        <Appl />
+    </BrowserRouter>
+), document.getElementById('root'))

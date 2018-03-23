@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import  './App.css';
 import Instagram from './img/instagram.svg';
 import Youtube from './img/youtube.svg';
