@@ -1,15 +1,15 @@
 body{
-  background:#8B8970;
+  background:		#66CD00;
 }
 
 a { 
   text-decoration: none; 
-  color:#8B8878;
+  color:#8B6914;
  }
 
 
  hr{
-      background:#514f46;
+      background:black;
       width:95%;
    }
    table {padding-left:5vh;} 
@@ -53,7 +53,7 @@ td {padding-left:5vh;}
   width:100%;
   height:7vh;
   position: fixed;
-  background:#8B8878;
+  background:	#66CD00;
       /* opacity: 0.8; */
 }
 
@@ -64,8 +64,8 @@ td {padding-left:5vh;}
   margin-top:0.5%;
   padding-bottom:12%;
   border: 1px solid black;
-  background:#222;
-  color:white;
+  background:#CDCDB4;
+  color:black;
   font-size:1.5vh;
   text-decoration: none;
 }
@@ -129,7 +129,7 @@ button.knopka
 }
   button.knopka:active
 {
-  background: #FF8247;
+  background: rgb(233, 102, 41);
 }
 
   .viravnivanie
@@ -151,10 +151,10 @@ button.knopka
 .rightMenu
 {
 width:29%;
-height:559.5%;
+height:533.5%;
 border: 1px solid black;
-background:#222;
-color:white;
+background:#CDCDB4;
+color:#8B6914;
 padding-top:2.5%;
 position:absolute;
 right:0%;
@@ -177,6 +177,7 @@ font-size:2vh;
 {
   width:100%;
   height:3.5vh;
+  position: absolute;
 }
 
 .reg
