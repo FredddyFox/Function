@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import  './App.css';
-
+import About from "./About";
 
 class RightMenu extends Component {
 render(){
