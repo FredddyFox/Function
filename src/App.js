@@ -1,18 +1,10 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import './App.css';
 import RightMenu from './RightMenu';
 import Bottom from './Bottom';
 import Vivod from './Vivod';
 import Header from './Header';
-import Hi from './Hi';
-
-const Container = styled.div`
-    width:100%;
-    height:6vh;
-    background: black;
-`;
-
+import About from "./About";
 
 class App extends Component {
  
@@ -52,20 +44,6 @@ class App extends Component {
              this.setState({data: items});
             })
 
-
-
-
-    /*const request = new XMLHttpRequest();
-request.open("GET", "https://api.hh.ru/vacancies, false);
-request.send();
-const status = request.status;
-if(status==200)
-document.write("Текст ответа: " + request.responseText)
-else if(status==404)
-document.write("Ресурс не найден")
-else
-document.write(request.statusText)
-*/
   }
   handleChange = event => {
     this.setState({
@@ -73,40 +51,37 @@ document.write(request.statusText)
     });
   };
 
-  handleClickSearch = name => event => {
-    event.preventDefault(); 
-    this.getQuery(`https://api.hh.ru/vacancies?text=${name}`)
-    .then(
-      response => {
-          return JSON.parse(response);
-      }
-      )
+handleClickSearch = name => event => {
+  event.preventDefault(); 
+  this.getQuery(`https://api.hh.ru/vacancies?text=${name}`)
+  .then(
+    response => {
+        return JSON.parse(response);
+    }
+    )
+      .then(
+        obj => {
+          return obj.items;
+        })
         .then(
-         obj => {
-            return obj.items;
+          items => {
+            this.setState({
+            data: items, 
+            loading: false
+          });
           })
-          .then(
-            items => {
-             this.setState({
-              data: items, 
-              loading: false
-            });
-            })
   };
-  render(){
 
+  render(){
     const {data} = this.state;
     return (
-
-      /*loading ? <div>Загрузка</div> :*/
+      /*loading ? <div>Загрузка</div> :*/ 
       <div>
-        <RightMenu/>
+          <RightMenu/>
         <Header handleClickSearch={this.handleClickSearch}/>
-          <Container />
+        <div className="viravnivanie"></div>
         <Vivod data={data}/>
-
         <Bottom/>
-          <div><Hi/></div>
       </div>
     );
   }

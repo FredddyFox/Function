@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptSettings">
-<<<<<<< HEAD
-    <option name="languageLevel" value="FLOW" />
-=======
     <option name="languageLevel" value="JSX" />
->>>>>>> a74679fe1cb97c49e3e1bea340f85b5445f26193
   </component>
 </project>
