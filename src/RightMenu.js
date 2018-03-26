@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import  './App.css';
-
+import About from "./About";
 
 class RightMenu extends Component {
 render(){
     return (
 <div className="rightMenu">
-<center><h1>Приветствуем вас на сайте<br></br> вакансий</h1></center>
+<center><h2>Приветствуем вас на сайте<br></br> вакансий</h2></center>
 <hr></hr>
 <center>
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/GNOME_Web_logo.png" className="img_" alt="Логотип сайта"/></center> 
@@ -31,7 +30,6 @@ render(){
 <button className="knopka1">
         Поиск
 </button>
-    <hr></hr>
 </div>
 );
 }
