@@ -75,12 +75,11 @@ handleClickSearch = name => event => {
   render(){
     const {data} = this.state;
     return (
-      /*loading ? <div>Загрузка</div> :*/ 
       <div>
           <RightMenu/>
         <Header handleClickSearch={this.handleClickSearch}/>
         <div className="viravnivanie"></div>
-        <Vivod data={data}/>
+          <div className="Content228"><Vivod data={data}/></div>
         <Bottom/>
       </div>
     );

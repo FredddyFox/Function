@@ -2,21 +2,25 @@ body{
   background:		#66CD00;
 }
 
-a { 
-  text-decoration: none; 
+a {
+  text-decoration: none;
   color:#8B6914;
- }
+}
 
 
- hr{
-      background:black;
-      width:95%;
-   }
-   table {padding-left:5vh;} 
+hr{
+  background:black;
+  width:95%;
+}
+table {
+  padding-left:5vh;
+}
 
-th {padding-left:5vh;}
+th {
+  padding-left:5vh;
+}
 
-td {padding-left:5vh;} 
+td {padding-left:5vh;}
 
 .App {
   text-align: center;
@@ -54,13 +58,13 @@ td {padding-left:5vh;}
   height:7vh;
   position: fixed;
   background:	#66CD00;
-      /* opacity: 0.8; */
+  /* opacity: 0.8; */
 }
 
 .vivod
 {
-  width:70%;
-  height:2vh;
+  width:99.7%;
+  height:8vh;
   margin-top:0.5%;
   padding-bottom:12%;
   border: 1px solid black;
@@ -72,40 +76,40 @@ td {padding-left:5vh;}
 
 
 
-button.knopka1
+.knopka1
 {
-  color: #fff; 
-  background: #FFA500; 
-  padding: 4px; 
+  color: #fff;
+  background: #FFA500;
+  padding: 4px;
   border-radius: 5px;
   border: 2px solid #FF8247;
-  width: 60%;
-  height: 1%;
+  width: 30vh;
+  height: 5vh;
   margin: 2%;
-  margin-left: 22%;  
-} 
-
-button.knopka1:hover 
-{ 
-  background: rgb(253, 135, 114); 
+  margin-left: 22%;
 }
 
-button.knopka1:active
+.knopka1:hover
+{
+  background: rgb(253, 135, 114);
+}
+
+.knopka1:active
 {
   padding-bottom: 1px;
   box-shadow:
-   inset rgba(0,0,0,1) 0 1px 3px,
-   inset rgba(0,0,0,.6) 0 -2px 5px,
-   inset rgba(252,255,255,.7) 0 2px 5px,
-   0 1px rgba(255,255,255,.08);
+          inset rgba(0,0,0,1) 0 1px 3px,
+          inset rgba(0,0,0,.6) 0 -2px 5px,
+          inset rgba(252,255,255,.7) 0 2px 5px,
+          0 1px rgba(255,255,255,.08);
   color: rgb(128,207,214);
   background: rgb(255, 92, 92);
 }
-  
+
 .pole
 {
   background-color:white;
-  padding: 4px; 
+  padding: 4px;
   height: 10%;
   width: 7%;
   margin-top: 2%;
@@ -113,57 +117,57 @@ button.knopka1:active
 }
 button.knopka
 {
-	color: #fff; 
-	background: #FFA500; 
-	padding: 0.4vh; 
-	border-radius: 0.6vh;
+  color: #fff;
+  background: #FFA500;
+  padding: 0.4vh;
+  border-radius: 0.6vh;
   border: 0.5vh solid #FF8247;
   width: 4%;
   height: 15%;
-  margin-left: 0%; 
-  font-size:1.5vh; 
-} 
-  button.knopka:hover
-{ 
-  background: #FF8247; 
+  margin-left: 0%;
+  font-size:1.5vh;
 }
-  button.knopka:active
+button.knopka:hover
+{
+  background: #FF8247;
+}
+button.knopka:active
 {
   background: rgb(233, 102, 41);
 }
 
-  .viravnivanie
-  {
-    width:100%;
-    height:6vh;
-    background:black;
-  }
-  .pole{
-    background-color:white;
-    padding: 0.8vh; 
-    width: 12%;
-    margin-top: 2.5%;
-    margin-left: 2%;
-    font-size:1.5vh; 
-  }
+.viravnivanie
+{
+  width:100%;
+  height:6vh;
+  background:black;
+}
+.pole{
+  background-color:white;
+  padding: 0.8vh;
+  width: 12%;
+  margin-top: 2.5%;
+  margin-left: 2%;
+  font-size:1.5vh;
+}
 
 
 .rightMenu
 {
-width:29%;
-height:533.5%;
-border: 1px solid black;
-background:#CDCDB4;
-color:#8B6914;
-padding-top:2.5%;
-position:absolute;
-right:0%;
-font-size:2vh; 
+  width:29%;
+  height:89vh;
+  border: 1px solid black;
+  background:#CDCDB4;
+  color:#8B6914;
+  padding-top:2.5%;
+  position:absolute;
+  right:0%;
+  font-size:2vh;
 }
 
 .img_
 {
-  width:35vh;
+  width:28vh;
 }
 
 
@@ -182,21 +186,21 @@ font-size:2vh;
 
 .reg
 {
-  color: #fff; 
-	background: #FFA500; 
-	padding: 0.4vh; 
-	border-radius: 0.6vh;
+  color: #fff;
+  background: #FFA500;
+  padding: 0.4vh;
+  border-radius: 0.6vh;
   border: 0.5vh solid #FF8247;
   width: 4%;
   height: 15%;
-  margin-left: 77%; 
-  font-size:1.5vh; 
-} 
-  button.reg:hover 
-{ 
-  background: #FF8247; 
+  margin-left: 77%;
+  font-size:1.5vh;
 }
-  button.reg:active
+button.reg:hover
+{
+  background: #FF8247;
+}
+button.reg:active
 {
   background: #FF8247;
 }
@@ -227,6 +231,144 @@ font-size:2vh;
   width:4.5vh;
   position:absolute;
   right:15vh;
+}
+.Content228
+{
+  width:70%;
+  height:88vh;
+  background:#66CD00;
+  overflow-y: scroll;
+}
+.HeaderStandart
+{
+  width:100%;
+  height:7vh;
+  background:#66CD00;
+  color:black;
+  z-index: 10;
+position: absolute;
+}
+.Search
+{
+  width:100%;
+  height:88vh;
+  color:black;
+  background:#CDCDB4;
+}
+
+.search {
+  /* устанавливаем необходимую ширину формы в зависимости от дизайна
+  ** форма без проблем растягивается */
+  width: 35%;
+
+  /* кнопку отправки будем позиционировать абсолютно,
+  ** поэтому необходимо это свойство */
+  position: relative;
+}
+
+.search input {
+  /* отключаем бордюры у инпутов */
+  border: none;
+}
+
+/* стили для поля ввода */
+.search .input {
+  /* растягиваем поле ввода на всю ширину формы */
+  width: 100%;
+
+  /* за счет верхнего (8px) и нижнего (9px) внутренних отступов
+  ** регулируем высоту формы
+  ** внутренний отступ справа (37px) делаем больше левого,
+  ** т.к. там будет размещена кнопка отправки	*/
+  padding: 8px 37px 9px 15px;
+
+  /* чтобы ширина поля ввода (100%) включала в себя внутренние отступы */
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  /* добавляем внутренние тени */
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1), inset 0 1px 2px rgba(0,0,0,0.3);
+
+  /* закругляем углы */
+  border-radius: 20px;
+
+  background: #EEE;
+  font: 13px Tahoma, Arial, sans-serif;
+  color: #555;
+  outline: none;
+}
+
+/* меняем оформление поля ввода при фокусе */
+.search .input:focus {
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2), inset 0 1px 2px rgba(0,0,0,0.4);
+  background: #E8E8E8;
+  color: #333;
+}
+
+/* оформляем кнопку отправки */
+.search .submit {
+  /* позиционируем кнопку абсолютно от правого края формы */
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 37px;
+
+  /* растягиваем кнопку на всю высоту формы */
+  height: 100%;
+
+  cursor: pointer;
+  background: url(https://lh4.googleusercontent.com/-b-5aBxcxarY/UAfFW9lVyjI/AAAAAAAABUg/gQtEXuPuIds/s13/go.png) 50% no-repeat;
+
+  /* добавляем прозрачность кнопке отправки */
+  opacity: 0.5;
+}
+
+/* при наведении курсора меняем прозрачность кнопки отправки */
+.search .submit:hover {
+  opacity: 0.8;
+}
+
+/* данное свойство необходимо для того, чтобы в браузерах
+** Chrome и Safari можно было стилизовать инпуты */
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
+/* задаем отдельные стили для браузеров IE ниже 9-й версии */
+*+html .search {
+  /* для IE7 подгоняем ширину под другие браузеры и добавляем правый
+  ** внутренний отступ, чтобы кнопка отправки встала на свое место */
+  width: 28%;
+  padding: 0 52px 0 0;
+}
+.search .input {
+  border: 1px solid #DFDFDF;
+  border-top: 1px solid #B3B3B3;
+  padding-top: 7px;
+  padding-bottom: 8px;
+}
+.search .input:focus {
+  border: 1px solid #CFCFCF;
+  border-top: 1px solid #999;
+}
+.search .submit {
+  filter: alpha(opacity=50);
+}
+.search .submit:hover {
+  filter: alpha(opacity=80);
+}
+.ramka
+{
+width: 60vh;
+  height: 35vh;
+  border-style:solid;
+}
+.Vivod2
+{
+  width:100%;
+  height:41vh;
+  margin-top: 1vh;
 }
 
 

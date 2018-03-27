@@ -19,16 +19,16 @@ this.setState({
 render(){
     return (
         <div className="menu">
-        <form className="form_">
-         <input placeholder="Ввод информации:" className="pole" type="search" value={this.state.name}
-          onChange={this.handleChange} />
-        <button className="knopka" onClick={this.props.handleClickSearch(this.state.name)}>
-        Поиск
-    </button>
-        <button className="reg">
-        Поиск
-    </button>
-    </form>
+            <form className="form_">
+                <input placeholder="Ввод информации:" className="pole" type="search" value={this.state.name}
+                       onChange={this.handleChange} />
+                <button className="knopka" onClick={this.props.handleClickSearch(this.state.name)}>
+                    Поиск
+                </button>
+                <button className="reg">
+                    Поиск
+                </button>
+            </form>
     </div>
     )
   }
