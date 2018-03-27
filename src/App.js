@@ -1,10 +1,11 @@
+"use strict";
 import React, { Component } from 'react';
 import './App.css';
 import RightMenu from './RightMenu';
 import Bottom from './Bottom';
 import Vivod from './Vivod';
 import Header from './Header';
-import About from "./About";
+
 
 class App extends Component {
  

@@ -6,12 +6,7 @@
     "material-ui": "^1.0.0-beta.38",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-<<<<<<< HEAD
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.1",
-    "styled-components": "^3.2.3"
-=======
+    "styled-components": "^3.2.3",
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
@@ -20,7 +15,6 @@
     "redux-devtools": "^3.4.1",
     "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.2.0"
->>>>>>> a74679fe1cb97c49e3e1bea340f85b5445f26193
   },
   "scripts": {
     "start": "react-scripts start",
