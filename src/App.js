@@ -75,7 +75,6 @@ handleClickSearch = name => event => {
   render(){
     const {data} = this.state;
     return (
-      /*loading ? <div>Загрузка</div> :*/ 
       <div>
           <RightMenu/>
         <Header handleClickSearch={this.handleClickSearch}/>
