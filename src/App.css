@@ -237,7 +237,7 @@ button.reg:active
   width:70%;
   height:88vh;
   background:#66CD00;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .HeaderStandart
 {
@@ -372,3 +372,27 @@ width: 60vh;
 }
 
 
+.num {
+  display: none;
+}
+.paginator {
+  line-height: 150%;
+}
+.paginator > span {
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+
+.paging
+{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+}
+
+.paging-item
+{
+  margin-left:7%;
+}

@@ -31,18 +31,12 @@ export default class FormSearch extends Component {
             cityName: event.target.value,
         });
         };
-    
-    
-    
-    
-    
 
       getQuery = async () => {
         try {
           const response2 = await axios.get(`https://api.hh.ru/suggests/areas?text=${this.state.cityName}`);
           const cityID = await response2.data.items[0].id
-          console.log(cityID);
-          const response = await axios.get(`https://api.hh.ru/vacancies?text=${this.state.text}&area=${cityID}`);
+          const response = await axios.get(`https://api.hh.ru/vacancies?text=${this.state.text}&area=${cityID}&per_page=50&page=0`);
           const items =  await response.data.items;
           this.setState({data: items})
         } catch (error) {
