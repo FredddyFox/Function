@@ -237,7 +237,162 @@ button.reg:active
   width:70%;
   height:88vh;
   background:#66CD00;
-  overflow-y: scroll;
+  overflow-y: auto;
+}
+.HeaderStandart
+{
+  width:100%;
+  height:7vh;
+  background:#66CD00;
+  color:black;
+  z-index: 10;
+position: absolute;
+}
+.Search
+{
+  width:100%;
+  height:88vh;
+  color:black;
+  background:#CDCDB4;
+}
+
+.search {
+  /* устанавливаем необходимую ширину формы в зависимости от дизайна
+  ** форма без проблем растягивается */
+  width: 35%;
+
+  /* кнопку отправки будем позиционировать абсолютно,
+  ** поэтому необходимо это свойство */
+  position: relative;
+}
+
+.search input {
+  /* отключаем бордюры у инпутов */
+  border: none;
+}
+
+/* стили для поля ввода */
+.search .input {
+  /* растягиваем поле ввода на всю ширину формы */
+  width: 100%;
+
+  /* за счет верхнего (8px) и нижнего (9px) внутренних отступов
+  ** регулируем высоту формы
+  ** внутренний отступ справа (37px) делаем больше левого,
+  ** т.к. там будет размещена кнопка отправки	*/
+  padding: 8px 37px 9px 15px;
+
+  /* чтобы ширина поля ввода (100%) включала в себя внутренние отступы */
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  /* добавляем внутренние тени */
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1), inset 0 1px 2px rgba(0,0,0,0.3);
+
+  /* закругляем углы */
+  border-radius: 20px;
+
+  background: #EEE;
+  font: 13px Tahoma, Arial, sans-serif;
+  color: #555;
+  outline: none;
+}
+
+/* меняем оформление поля ввода при фокусе */
+.search .input:focus {
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2), inset 0 1px 2px rgba(0,0,0,0.4);
+  background: #E8E8E8;
+  color: #333;
+}
+
+/* оформляем кнопку отправки */
+.search .submit {
+  /* позиционируем кнопку абсолютно от правого края формы */
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 37px;
+
+  /* растягиваем кнопку на всю высоту формы */
+  height: 100%;
+
+  cursor: pointer;
+  background: url(https://lh4.googleusercontent.com/-b-5aBxcxarY/UAfFW9lVyjI/AAAAAAAABUg/gQtEXuPuIds/s13/go.png) 50% no-repeat;
+
+  /* добавляем прозрачность кнопке отправки */
+  opacity: 0.5;
+}
+
+/* при наведении курсора меняем прозрачность кнопки отправки */
+.search .submit:hover {
+  opacity: 0.8;
+}
+
+/* данное свойство необходимо для того, чтобы в браузерах
+** Chrome и Safari можно было стилизовать инпуты */
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
+/* задаем отдельные стили для браузеров IE ниже 9-й версии */
+*+html .search {
+  /* для IE7 подгоняем ширину под другие браузеры и добавляем правый
+  ** внутренний отступ, чтобы кнопка отправки встала на свое место */
+  width: 28%;
+  padding: 0 52px 0 0;
+}
+.search .input {
+  border: 1px solid #DFDFDF;
+  border-top: 1px solid #B3B3B3;
+  padding-top: 7px;
+  padding-bottom: 8px;
+}
+.search .input:focus {
+  border: 1px solid #CFCFCF;
+  border-top: 1px solid #999;
+}
+.search .submit {
+  filter: alpha(opacity=50);
+}
+.search .submit:hover {
+  filter: alpha(opacity=80);
+}
+.ramka
+{
+width: 60vh;
+  height: 35vh;
+  border-style:solid;
+}
+.Vivod2
+{
+  width:100%;
+  height:41vh;
+  margin-top: 1vh;
 }
 
 
+.num {
+  display: none;
+}
+.paginator {
+  line-height: 150%;
+}
+.paginator > span {
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+
+.paging
+{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+}
+
+.paging-item
+{
+  margin-left:7%;
+}
