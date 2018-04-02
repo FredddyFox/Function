@@ -1,6 +1,5 @@
 body{
-  background:	#66CD00	;
-
+  background:		#66CD00;
 }
 
 a {
@@ -244,6 +243,13 @@ td {padding-left:5vh;}
   width:100%;
   height:7vh;
   background:#66CD00;
+  overflow-y: auto;
+}
+.HeaderStandart
+{
+  width:100%;
+  height:7vh;
+  background:#66CD00;
   color:black;
   z-index: 10;
 position: absolute;
@@ -369,6 +375,32 @@ width: 60vh;
   width:100%;
   height:41vh;
   margin-top: 1vh;
+}
+
+
+.num {
+  display: none;
+}
+.paginator {
+  line-height: 150%;
+}
+.paginator > span {
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+
+.paging
+{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+}
+
+.paging-item
+{
+  margin-left:7%;
 }
 
 .we
