@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './index.js';
 import RightMenu from "./RightMenu";
 
-class About extends Component{
+export default class About extends Component{
     render(){
         return (
 <div>
@@ -29,5 +29,3 @@ class About extends Component{
         )
     }
 }
-
-export default About;

@@ -5,7 +5,9 @@ import { Provide } from 'react-redux';
 import {  Route, hashHistory} from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
+import FormSearch from "./FormSearch";
 import About from "./About";
+
 import App from "./App";
 
 
@@ -14,6 +16,7 @@ const Main = () => (
         <Switch>
             <Route exact path='/' component={App}/>
             <Route path='/about' component={About}/>
+            <Route path='/FormSearch' component={FormSearch}/>
         </Switch>
     </main>
 )

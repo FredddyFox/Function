@@ -13,6 +13,9 @@ class App extends Component {
     date: [], 
     loading: true
   };
+
+
+
   getQuery = url => {
     return new Promise((succeed, fail)=>{
       const request = new XMLHttpRequest();
@@ -27,56 +30,55 @@ class App extends Component {
       request.send();
     });
   };
-  
-  
-  componentDidMount() {
-    this.getQuery(`https://api.hh.ru/vacancies`)
-    .then(
-      response => {
-          return JSON.parse(response);
-      }
-      )
-        .then(
-         obj => {
-            return obj.items;
-          })
-          .then(
-            items => {
-             this.setState({data: items});
-            })
 
+  
+componentDidMount() {
+this.getQuery(`https://api.hh.ru/vacancies?&only_with_salary=true`)
+.then(
+  response => {
+      return JSON.parse(response);
   }
-  handleChange = event => {
-    this.setState({
-      name: event.target.value,
-    });
-  };
+  )
+    .then(
+     obj => {
+        return obj.items;
+      })
+      .then(
+        items => {
+         this.setState({data: items});
+        })
+
+}
+handleChange = event => {
+this.setState({
+  name: event.target.value,
+});
+};
 
 handleClickSearch = name => event => {
-  event.preventDefault(); 
-  this.getQuery(`https://api.hh.ru/vacancies?text=${name}`)
+event.preventDefault();
+this.getQuery(`https://api.hh.ru/vacancies?text=${name}&only_with_salary=true`)
+.then(
+response => {
+    return JSON.parse(response);
+}
+)
   .then(
-    response => {
-        return JSON.parse(response);
-    }
-    )
-      .then(
-        obj => {
-          return obj.items;
-        })
-        .then(
-          items => {
-            this.setState({
-            data: items, 
-            loading: false
-          });
-          })
-  };
+    obj => {
+      return obj.items;
+    })
+    .then(
+      items => {
+        this.setState({
+        data: items,
+        loading: false
+      });
+      })
+}
 
-  render(){
+render(){
     const {data} = this.state;
     return (
-      /*loading ? <div>Загрузка</div> :*/ 
       <div>
           <RightMenu/>
         <Header handleClickSearch={this.handleClickSearch}/>
@@ -87,6 +89,5 @@ handleClickSearch = name => event => {
     );
   }
 }
-
 
 export default App;

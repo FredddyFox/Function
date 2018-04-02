@@ -23,9 +23,12 @@ render(){
 </button>
 </form>
 
-<button className="knopka1">
-        Поиск 
-</button>
+<form action="/FormSearch">
+    <button className="knopka1">
+        Расширенный поиск
+    </button>
+</form>
+
 
 <button className="knopka1">
         Поиск
