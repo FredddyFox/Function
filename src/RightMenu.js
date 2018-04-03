@@ -11,15 +11,9 @@ render(){
 <center>
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/GNOME_Web_logo.png" className="img_" alt="Логотип сайта"/></center>
 
-<form action="/">
+<form action=" /">
 <button className="knopka1">
         Главное меню
-</button>
-</form>
-
-<form action="/about">
-<button className="knopka1">
-О нас
 </button>
 </form>
 
@@ -29,14 +23,11 @@ render(){
     </button>
 </form>
 
-
-<button className="knopka1">
-        Поиск
-</button>
-
-<button className="knopka1">
-        Поиск
-</button>
+<form action="/about">
+    <button className="knopka1">
+        О нас
+    </button>
+</form>
 </div>
 );
 }
