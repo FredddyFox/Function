@@ -64,7 +64,7 @@ td {padding-left:5vh;}
 .vivod
 {
   width:99.7%;
-  height:8vh;
+  height:15vh;
   margin-top:0.5%;
   padding-bottom:12%;
   border: 1px solid black;
@@ -115,7 +115,7 @@ td {padding-left:5vh;}
   margin-top: 2%;
   margin-left: 2%;
 }
-button.knopka
+.knopka
 {
   color: #fff;
   background: #FFA500;
@@ -127,11 +127,11 @@ button.knopka
   margin-left: 0%;
   font-size:1.5vh;
 }
-button.knopka:hover
+.knopka:hover
 {
   background: #FF8247;
 }
-button.knopka:active
+.knopka:active
 {
   background: rgb(233, 102, 41);
 }
@@ -139,7 +139,7 @@ button.knopka:active
 .viravnivanie
 {
   width:100%;
-  height:6vh;
+  height:7vh;
   background:black;
 }
 .pole{
@@ -196,11 +196,11 @@ button.knopka:active
   margin-left: 77%;
   font-size:1.5vh;
 }
-button.reg:hover
+.reg:hover
 {
   background: #FF8247;
 }
-button.reg:active
+.reg:active
 {
   background: #FF8247;
 }
@@ -236,8 +236,13 @@ button.reg:active
 {
   width:70%;
   height:88vh;
+  overflow-y: scroll;
+}
+.HeaderStandart
+{
+  width:100%;
+  height:7vh;
   background:#66CD00;
-  overflow-y: auto;
 }
 .HeaderStandart
 {
@@ -395,4 +400,18 @@ width: 60vh;
 .paging-item
 {
   margin-left:7%;
+}
+
+.we
+{
+  width:68%;
+  height:94vh;
+  margin-top:0.5%;
+  border: 1px solid black;
+  margin-left: 2%;
+  background:#CDCDB4;
+  color:black;
+  font-size:3vh;
+  text-decoration: none;
+  border-radius: 2%;
 }

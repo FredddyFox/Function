@@ -7,15 +7,15 @@ import axios from 'axios';
 
 
 export default class FormSearch extends Component {
-    
+
     state={
         name: '',
         date: [],
-        text:"", 
+        text:"",
         loading: true,
         cityName: "",
       };
-     
+
     componentDidMount = async () => {
         this.getQuery()
       }
@@ -45,24 +45,24 @@ export default class FormSearch extends Component {
       }
 
 
-      
-      
 
 
 
 
 
-    
-    
+
+
+
+
     handleClickSearch = event => {
-      event.preventDefault(); 
+      event.preventDefault();
       this.getQuery()
       };
 
     render(){
 
         const {data} = this.state;
-        
+
         return (
             <div>
                 <RightMenu/>

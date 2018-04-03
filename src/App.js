@@ -16,7 +16,7 @@ class App extends Component {
 
   getQuery = async (name) => {
     try {
-      const response = await axios.get(`https://api.hh.ru/vacancies?text=${name}&&per_page=50&page=0`);
+      const response = await axios.get(`https://api.hh.ru/vacancies?text=${name}&&per_page=50&page=0&only_with_salary=true`);
       const items =  await response.data.items;
       this.setState({data: items})
     } catch (error) {
@@ -31,11 +31,12 @@ handleClickSearch = name => event => {
 
   componentDidMount() {
 this.getQuery(" ");
-            }
+}
 
   render(){
     const {data} = this.state;
     return (
+      /*loading ? <div>Загрузка</div> :*/ 
       <div>
           <RightMenu/>
         <Header handleClickSearch={this.handleClickSearch}/>

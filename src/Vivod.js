@@ -3,7 +3,7 @@ import  './App.css';
 
 export default class Vivod extends Component {
 
- 
+
     constructor() {
         super();
         this.state = {
@@ -13,66 +13,6 @@ export default class Vivod extends Component {
         this.handleClick = this.handleClick.bind(this);
       }
 
-      getQuery = url => {
-        return new Promise((succeed, fail)=>{
-          const request = new XMLHttpRequest();
-          request.open('GET', url);
-          request.addEventListener('load', () => {
-            (request.status < 400) ? succeed(request.responseText) : fail(new Error('Error '+request.statusText))
-          });
-          request.addEventListener('error', ()=>{
-            fail(new Error('Error'));
-          });
-    
-          request.send();
-        });
-      };
-    
-      
-      componentDidMount() {
-        this.getQuery(`https://api.hh.ru/vacancies?&only_with_salary=true`)
-        .then(
-          response => {
-              return JSON.parse(response);
-          }
-          )
-            .then(
-             obj => {
-                return obj.items;
-              })
-              .then(
-                items => {
-                 this.setState({data: items});
-                })
-    
-      }
-      handleChange = event => {
-        this.setState({
-          name: event.target.value,
-        });
-      };
-    
-    handleClickSearch = name => event => {
-    event.preventDefault();
-    this.getQuery(`https://api.hh.ru/vacancies?text=${name}&only_with_salary=true`)
-    .then(
-    response => {
-        return JSON.parse(response);
-    }
-    )
-      .then(
-        obj => {
-          return obj.items;
-        })
-        .then(
-          items => {
-            this.setState({
-            data: items,
-            loading: false
-          });
-          })
-    }
-
       handleClick(event) {
         this.setState({
           currentPage: Number(event.target.id)
@@ -80,45 +20,67 @@ export default class Vivod extends Component {
       }
     render() {
         const {data} = this.props;
-        console.log('data',data);
         const { currentPage, todosPerPage } = this.state;
         const indexOfLastTodo = currentPage * todosPerPage;
         const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
-        let currentTodos = data && data.slice(indexOfFirstTodo, indexOfLastTodo);
-        console.log('currentTodos',currentTodos);
-        var renderTodos = currentTodos && currentTodos.map((data, index) => {
-    
+        const currentTodos = data && data.slice(indexOfFirstTodo, indexOfLastTodo);
+       
+        var renderTodos = currentTodos && currentTodos.map((currentTodo,index) => {
+        let HTML = '';
+        let all = {from : currentTodo.salary.from, to: currentTodo.salary.to};
+        let ot = (currentTodo.salary && currentTodo.salary.from);
+        let du = (currentTodo.salary && currentTodo.salary.to);
+        if (ot === null) {
+            HTML =
+                <tr>
+                    <td><p>Зарплата: До:{du} Рублей</p></td>
+                </tr>
 
-            return(    
-            <div className="vivod"> 
-        <div><tr><th><h2><a href={data.alternate_url}>{data.name}</a></h2></th></tr></div>
-        <div><hr></hr><tr><td><p>Требования:{data.snippet.requirement}</p></td></tr></div>
-        <div><tr><td><p>Город:{data.area.name}</p></td></tr></div>
-        <div><tr><td><p>Статус:{data.type.name}</p></td></tr></div>
-        </div>
+        } else if (du === null) {
+            HTML =
+                <tr>
+                    <td><p>Зарплата: От:{ot} Рублей</p></td>
+                </tr>
+        } else {
+            HTML =
+                <tr>
+                    <td><p>Зарплата: От:{all.from} -
+                        До:{all.to} Рублей</p></td>
+                </tr>
+        }
+       
+        return (
+        <div className="vivod">
+        <div><tr><th><h2><a href={data.alternate_url}>{currentTodo.name}</a></h2></th></tr></div>
+        <div><hr/><tr><td><p>Требования:{currentTodo.snippet.requirement}</p></td></tr></div>
+        <div><tr><td><p>Город:{currentTodo.area.name}</p></td></tr></div>
+        <div><tr><td><p>Статус:{currentTodo.type.name}</p></td></tr></div>
+        <div>{HTML}</div>
+    </div>
         )
-               });
+    }) 
                const pageNumbers = [];
                for (let i = 1; i <= Math.ceil(data && data.length / todosPerPage); i++) {
                 pageNumbers.push(i);
                }
-           
                const renderPageNumbers = pageNumbers.map(number => {
-                   return (
-                        <div className="paging-item">
-                            <button onClick={this.handleClick}
-                                key={number}
-                                id={number}>
-                                {number}
-                            </button>
-                       </div>  
-                   );
-               });
-           return(
-               <div>
-                {renderTodos}
-                 <div className="paging">
-                  {renderPageNumbers}
-              </div>
-                 </div>                     
-           )}};
+                return (
+                     <div className="paging-item">
+                         <button onClick={this.handleClick}
+                             key={number}
+                             id={number}>
+                             {number}
+                         </button>
+                    </div>  
+                );
+            });
+            console.log(renderPageNumbers);
+            return(
+                <div>
+                 {renderTodos}
+                  <div className="paging">
+                   {renderPageNumbers}
+               </div>
+                  </div>                     
+            )}};
+ 
