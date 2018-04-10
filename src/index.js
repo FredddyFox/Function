@@ -1,29 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Provide } from 'react-redux';
-import {  Route, hashHistory} from 'react-router';
+import { Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
-import { Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import reducer from "./reducers";
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
 import FormSearch from "./FormSearch";
 import About from "./About";
-
 import App from "./App";
 
 
-const Main = () => (
-    <main>
-        <Switch>
-            <Route exact path='/' component={App}/>
-            <Route path='/about' component={About}/>
-            <Route path='/FormSearch' component={FormSearch}/>
-        </Switch>
-    </main>
-)
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 
-
-ReactDOM.render((
+ const Main = () => (
+  <main>
+          <Route exact path='/' component={App}/>
+          <Route path='/about' component={About}/>
+          <Route path='/FormSearch' component={FormSearch}/>
+  </main>
+);
+console.log(store.getState());  
+ReactDOM.render(
+    <Provider store={store}>
     <BrowserRouter>
-        <Main />
+    <Main />
     </BrowserRouter>
-), document.getElementById('root'))
+</Provider>,  
+  document.getElementById('root')
+);  

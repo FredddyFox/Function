@@ -6,6 +6,8 @@ import Vivod from './Vivod';
 import Header from './Header';
 import About from "./About";
 import axios from 'axios';
+import { connect } from 'react-redux';
+
 
 class App extends Component {
 
@@ -14,15 +16,16 @@ class App extends Component {
     loading: true,
   };
 
-  getQuery = async (name) => {
-    try {
-      const response = await axios.get(`https://api.hh.ru/vacancies?text=${name}&&per_page=50&page=0&only_with_salary=true`);
-      const items =  await response.data.items;
-      this.setState({data: items})
-    } catch (error) {
-      console.error(error);
-    }
+getQuery = async (name) => {
+  try {
+    const response = await axios.get(`https://api.hh.ru/vacancies?text=${name}&&per_page=50&page=0&only_with_salary=true`);
+    const items =  await response.data.items;
+    this.setState({data: items})
+  } catch (error) {
+    console.error(error);
   }
+}
+ 
 
 handleClickSearch = name => event => {
   event.preventDefault(); 
@@ -34,6 +37,7 @@ this.getQuery(" ");
 }
 
   render(){
+
     const {data} = this.state;
     return (
       /*loading ? <div>Загрузка</div> :*/ 
