@@ -25,9 +25,6 @@ render(){
                 <button className="knopka" onClick={this.props.handleClickSearch(this.state.name)}>
                     Поиск
                 </button>
-                <button className="reg">
-                    Поиск
-                </button>
             </form>
     </div>
     )
