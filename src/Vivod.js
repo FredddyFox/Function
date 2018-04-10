@@ -24,7 +24,7 @@ export default class Vivod extends Component {
         const indexOfLastTodo = currentPage * todosPerPage;
         const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
         const currentTodos = data && data.slice(indexOfFirstTodo, indexOfLastTodo);
-       
+
         var renderTodos = currentTodos && currentTodos.map((currentTodo,index) => {
         let HTML = '';
         let all = {from : currentTodo.salary.from, to: currentTodo.salary.to};
@@ -48,7 +48,7 @@ export default class Vivod extends Component {
                         До:{all.to} Рублей</p></td>
                 </tr>
         }
-       
+
         return (
         <div className="vivod">
         <div><tr><th><h2><a href={data.alternate_url}>{currentTodo.name}</a></h2></th></tr></div>
@@ -58,7 +58,7 @@ export default class Vivod extends Component {
         <div>{HTML}</div>
     </div>
         )
-    }) 
+    })
                const pageNumbers = [];
                for (let i = 1; i <= Math.ceil(data && data.length / todosPerPage); i++) {
                 pageNumbers.push(i);
@@ -71,7 +71,7 @@ export default class Vivod extends Component {
                              id={number}>
                              {number}
                          </button>
-                    </div>  
+                    </div>
                 );
             });
             console.log(renderPageNumbers);
@@ -81,6 +81,5 @@ export default class Vivod extends Component {
                   <div className="paging">
                    {renderPageNumbers}
                </div>
-                  </div>                     
+                  </div>
             )}};
- 

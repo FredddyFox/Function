@@ -7,10 +7,8 @@ import Header from "./Header";
 import About from "./About";
 import axios from "axios";
 import { getTracks } from "./actions/sort";
-import sort from "./reducers/sort";
+import {sort} from "./reducers/sort";
 import { connect } from "react-redux";
-import { dispatch } from 'redux'
-import objectSort from "./reducers/objectSort";
 
 class App extends Component {
   state = {
@@ -23,20 +21,21 @@ class App extends Component {
     this.props.getQuery(name);
   };
 
-  componentDidMount()
-  {
-    this.props.getQuery(" ");
-  }
+  // componentDidMount()
+  // {
+  //   this.getQuery(" ");
+  // }
 
   render() {
     const { data } = this.state;
+    console.log(this.props);
     return (
       <div>
         <RightMenu />
         <Header handleClickSearch={this.handleClickSearch} />
         <div className="viravnivanie" />
         <div className="Content228">
-          <Vivod data={this.props.items} />
+          <Vivod data={data} />
         </div>
         <Bottom />
       </div>
@@ -47,7 +46,9 @@ class App extends Component {
 
 export default connect(
   state => ({
-    items: state.sort,
+    tracks:
+      state.sort &&
+      state.sort.filter(sort => sort.name.includes(state.filterTracks))
   }),
   dispatch => ({
     onAddTrack: name => {
@@ -58,17 +59,19 @@ export default connect(
 
       dispatch({ type: "ADD_TRACK", payload });
     },
-    getQuery: async (name) => {
+    getQuery: (name) => {
+      async dispatch => {
         try {
           const response = await axios.get(
             `https://api.hh.ru/vacancies?text=${name}&&per_page=50&page=0&only_with_salary=true`
           );
           const items = await response.data.items;
-          console.log('items',items);
           dispatch({ type: "RESPONSE_DATE", payload: items });
         } catch (error) {
           console.error(error);
         }
+      };
+
     },
 
     onFindTrack: name => {
@@ -76,7 +79,7 @@ export default connect(
       dispatch({ type: "FIND_TRACK", payload: name });
     },
     onGetTracks: () => {
-      dispatch(objectSort());
+      dispatch(getTracks());
     }
   })
 )(App);
