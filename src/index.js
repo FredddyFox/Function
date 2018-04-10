@@ -34,10 +34,10 @@ const Main = () => (
   </main>
 );
 
- <Router history={HashRouter}>
-            <Route path="/" component={App}/>
-            <Router path="/about" component={About}/>
-            </Router>
+  <Router history={HashRouter}>
+      <Route path="/" component={App}/>
+      <Router path="/about" component={About}/>
+  </Router>
 
 ReactDOM.render(
   <Provider store={store}>
@@ -45,6 +45,5 @@ ReactDOM.render(
       <Main />
     </BrowserRouter>
   </Provider>,
-
   document.getElementById("root")
 );
