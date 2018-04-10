@@ -1,33 +1,50 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import { Route } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import reducer from "./reducers";
-import { createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunk from 'redux-thunk';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import { Provide } from "react-redux";
+import { Route, hashHistory } from "react-router";
+import { BrowserRouter } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import FormSearch from "./FormSearch";
-import About from "./About";
-import App from "./App";
+import { Link, Router } from "react-router";
+import { Provider } from "react-redux";
+import { HashRouter } from "react-router-dom";
 
+import { createStore, applyMiddleware } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from "redux-thunk";
+
+import App from "./App";
+import "./index.css";
+import reducer from "./reducers";
+import About from "./About";
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 
- const Main = () => (
+
+console.log(store.getState());
+
+const Main = () => (
   <main>
-          <Route exact path='/' component={App}/>
-          <Route path='/about' component={About}/>
-          <Route path='/FormSearch' component={FormSearch}/>
+   <Switch>
+      <Route exact path="/" component={App} />
+      <Route path="/about" component={About} />
+      <Route path="/FormSearch" component={FormSearch} />
+    </Switch>
   </main>
 );
-console.log(store.getState());  
+
+ <Router history={HashRouter}>
+            <Route path="/" component={App}/>
+            <Router path="/about" component={About}/>
+            </Router>
+
 ReactDOM.render(
-    <Provider store={store}>
+  <Provider store={store}>
     <BrowserRouter>
-    <Main />
+      <Main />
     </BrowserRouter>
-</Provider>,  
-  document.getElementById('root')
-);  
+  </Provider>,
+
+  document.getElementById("root")
+);

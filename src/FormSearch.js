@@ -4,10 +4,16 @@ import RightMenu from './RightMenu';
 import Bottom from './Bottom';
 import Vivod2 from './Vivod2';
 import axios from 'axios';
+import { getTracks } from "./actions/sort";
+import sort from "./reducers/sort";
+import { connect } from "react-redux";
+import { dispatch } from 'redux'
+import objectSort from "./reducers/objectSort";
 
+ class FormSearch extends Component {
 
 export default class FormSearch extends Component {
-
+    
     state={
         name: '',
         date: [],
@@ -17,9 +23,9 @@ export default class FormSearch extends Component {
         dost: "",
       };
 
-componentDidMount = async () => {
-    this.getQuery()
-    }
+    componentDidMount = async () => {
+        this.props.getQuery()
+      }
 
 handleChangeText = event => {
 this.setState({
@@ -38,6 +44,10 @@ this.setState({
 });
 };
 
+    handleClickSearch = event => {
+      event.preventDefault();
+      this.props.getQuery(this.state.cityName,this.state.text );
+      };
 getQuery = async () => {
 try {
     let response;
@@ -49,11 +59,11 @@ try {
     else if(this.state.text) {
     response = await axios.get(`https://api.hh.ru/vacancies?text=${this.state.text}`);
     }else
-    { 
+    {
     response = await axios.get(`https://api.hh.ru/vacancies?text=${this.state.dost}`);
     }
     const items =  await response.data.items;
-    this.setState({data: items})    
+    this.setState({data: items})
 } catch (error) {
     console.error(error);
 }
@@ -97,7 +107,7 @@ return (
            </button>
     </form>
    </div></center>
-   <Vivod2 data={this.state.data}/>
+   <Vivod2 data={this.props.items}/>
 </div>
                 </div>
                 <Bottom/>
@@ -105,3 +115,38 @@ return (
         );
     }
 }
+
+
+
+
+export default connect(
+    state => ({
+      items: state.sort,
+    }),
+    dispatch => ({
+      onAddTrack: name => {
+        const payload = {
+          id: Date.now().toString(),
+          name
+        };
+
+        dispatch({ type: "ADD_TRACK", payload });
+      },
+      getQuery : async (cityName, text) => {
+        try {
+          const response2 = await axios.get(`https://api.hh.ru/suggests/areas?text=${cityName}`);
+          const cityID = await response2.data.items[0].id
+          const response = await axios.get(`https://api.hh.ru/vacancies?text=${text}&area=${cityID}&per_page=50&page=0`);
+          const items =  await response.data.items;
+          dispatch({ type: "RESPONSE_SEARCH", payload: items });
+        } catch (error) {
+          console.error(error);
+        }
+      },
+
+    })
+  )(FormSearch);
+
+
+
+
